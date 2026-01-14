@@ -82,8 +82,33 @@ button:active {
 }
 
 section {
-    border-radius: 5px;
+    border: 1px solid #772FD3;
+    border-radius: 20px;
     border-color: blueviolet;
-    padding: auto;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+.Vector-img {
+    margin: 15px 0;
+}
+
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.currency {
+    color: #777777;
+    font-size: 14px;
+}
+
+.currency-value {
+    color: #555555;
+    font-weight: 700;
+    font-size: 20px;
 }
