@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Convert Money</title>
+</head>
+
+<body>
+    <header>
+        <img id="gif" src="/assets/logo.gif" alt="Logo">
+    </header>
+    <main>
+        <div>
+
+            <label for="money1">
+                Converter <b>de</b>
+                <select id="money1" name="money1">
+                    <option value="R$">R$ Real brasileiro</option>
+                    <option value="US$">US$ Dólar americano</option>
+                    <option value="E$">E$ Euro</option>
+                </select>
+            </label>
+            <br>
+
+            <label for="money2">
+                Converter <b>para</b>
+                <select id="money2" name="money2">
+                    <option value="US$">US$ Dólar americano</option>
+                    <option value="R$">R$ Real brasileiro</option>
+                    <option value="E$">E$ Euro</option>
+                </select>
+            </label>
+            <br>
+
+            <label for="valor">
+                <b>Valor</b>
+                <input placeholder="R$ 10.000,00">
+            </label>
+            <br>
+
+            <button>Converter</button>
+
+        </div>
+
+        <section class="Resultado">
+
+            <div>
+                <img src="assets/brasil 2-1.png" alt="logo-moeda-a-converter">
+                <p>Real</p>
+                <p>R$ 0,00</p>
+            </div>
+
+            <img src="/assets/Vector.png" alt="Ceta">
+
+            <div>
+                <img src="assets/estados-unidos (1) 1.png" alt="logo-moeda-convertida">
+                <p>Dólar</p>
+                <p>US$ 0,00</p>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>
