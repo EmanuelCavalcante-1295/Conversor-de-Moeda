@@ -68,7 +68,6 @@ function converter() {
     if (valuePara === 'R$') {
         Convertida.src = 'assets/brasil 2-1.png';
         currency2.innerHTML = 'Real'
-        currencyValue2.innerHTML = 'R$ ' + valorConvertido.toFixed(2)
         if (valueDe === 'R$') {
             valorConvertido = valor.value * 1
         }
@@ -78,11 +77,11 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * rates3
         }
+        currencyValue2.innerHTML = 'R$ ' + valorConvertido.toFixed(2)
     }
     else if (valuePara === 'US$') {
         Convertida.src = 'assets/estados-unidos (1) 1.png';
         currency2.innerHTML = 'Dólar'
-        currencyValue2.innerHTML = 'US$ ' + valorConvertido.toFixed(2)
         if (valueDe === 'R$') {
             valorConvertido = valor.value * rates2
         }
@@ -92,11 +91,11 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * rates6
         }
+        currencyValue2.innerHTML = 'US$ ' + valorConvertido.toFixed(2)
     }
     else if (valuePara === 'E$') {
         Convertida.src = 'assets/Design sem nome 3.png';
         currency2.innerHTML = 'Euro'
-        currencyValue2.innerHTML = 'E$ ' + valorConvertido.toFixed(2)
         if (valueDe === 'R$') {
             valorConvertido = valor.value * rates4
         }
@@ -106,5 +105,6 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * 1
         }
+        currencyValue2.innerHTML = 'E$ ' + valorConvertido.toFixed(2)
     }
 }
