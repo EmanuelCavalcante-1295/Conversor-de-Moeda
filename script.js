@@ -6,28 +6,6 @@ const currency1 = document.querySelector('.currency1')
 const currencyValue1 = document.querySelector('.currency-value1')
 const valor = document.querySelector('.valor')
 
-de.addEventListener('change', atualizarMoeda1)
-
-function atualizarMoeda1() {
-    const valueDe = de.value
-
-    if (valueDe === 'R$') {
-        moedaAConverter.src = 'assets/brasil 2-1.png';
-        currency1.innerHTML = 'Real'
-        currencyValue1.innerHTML = 'R$' + valor.value
-    }
-    else if (valueDe === 'US$') {
-        moedaAConverter.src = 'assets/estados-unidos (1) 1.png';
-        currency1.innerHTML = 'Dólar'
-        currencyValue1.innerHTML = 'US$' + valor.value
-    }
-    else if (valueDe === 'E$') {
-        moedaAConverter.src = 'assets/Design sem nome 3.png';
-        currency1.innerHTML = 'Euro'
-        currencyValue1.innerHTML = 'E$' + valor.value
-    }
-}
-
 const para = document.getElementById('money2')
 const valuePara = para.value;
 
@@ -35,24 +13,41 @@ const Convertida = document.querySelector('.convertida')
 const currency2 = document.querySelector('.currency2')
 const currencyValue2 = document.querySelector('.currency-value2')
 
-para.addEventListener('change', atualizarMoeda2)
+function converter() {
 
-function atualizarMoeda2() {
+    const valueDe = de.value
+
+    if (valueDe === 'R$') {
+        moedaAConverter.src = 'assets/brasil 2-1.png';
+        currency1.innerHTML = 'Real'
+        currencyValue1.innerHTML = 'R$ ' + valor.value
+    }
+    else if (valueDe === 'US$') {
+        moedaAConverter.src = 'assets/estados-unidos (1) 1.png';
+        currency1.innerHTML = 'Dólar'
+        currencyValue1.innerHTML = 'US$ ' + valor.value
+    }
+    else if (valueDe === 'E$') {
+        moedaAConverter.src = 'assets/Design sem nome 3.png';
+        currency1.innerHTML = 'Euro'
+        currencyValue1.innerHTML = 'E$ ' + valor.value
+    }
+
     const valuePara = para.value
 
     if (valuePara === 'R$') {
         Convertida.src = 'assets/brasil 2-1.png';
         currency2.innerHTML = 'Real'
-        currencyValue2.innerHTML = 'R$' + valor.value
+        currencyValue2.innerHTML = 'R$ ' + valor.value 
     }
     else if (valuePara === 'US$') {
         Convertida.src = 'assets/estados-unidos (1) 1.png';
         currency2.innerHTML = 'Dólar'
-        currencyValue2.innerHTML = 'US$' + valor.value
+        currencyValue2.innerHTML = 'US$ ' + valor.value
     }
     else if (valuePara === 'E$') {
         Convertida.src = 'assets/Design sem nome 3.png';
         currency2.innerHTML = 'Euro'
-        currencyValue2.innerHTML = 'E$' + valor.value
+        currencyValue2.innerHTML = 'E$ ' + valor.value
     }
 }
