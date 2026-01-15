@@ -13,25 +13,35 @@ const Convertida = document.querySelector('.convertida')
 const currency2 = document.querySelector('.currency2')
 const currencyValue2 = document.querySelector('.currency-value2')
 
+let rates1, rates2, rates3, rates4, rates5, rates6
+
 async function getRates(base, symbols) {
-const url = `https://api.frankfurter.app/latest?base=${base}&symbols=${symbols}`
-const response = await fetch(url)
-const data = await response.json()
-return data.rates[symbols]
+    const url = `https://api.frankfurter.app/latest?base=${base}&symbols=${symbols}`
+    const response = await fetch(url)
+    const data = await response.json()
+    return data.rates[symbols]
 }
 
-const rates1 = await getRates("USD", "BRL")
-console.log(rates1)
-const rates2 = await getRates("BRL", "USD")
-console.log(rates2)
-const rates3 = await getRates("EUR", "BRL")
-console.log(rates3)
-const rates4 = await getRates("BRL", "EUR")
-console.log(rates4)
-const rates5 = await getRates("USD", "EUR")
-console.log(rates5)
-const rates6 = await getRates("EUR", "USD")
-console.log(rates6)
+async function start() {
+
+    rates1 = await getRates("USD", "BRL")
+    console.log(rates1)
+    rates2 = await getRates("BRL", "USD")
+    console.log(rates2)
+    rates3 = await getRates("EUR", "BRL")
+    console.log(rates3)
+    rates4 = await getRates("BRL", "EUR")
+    console.log(rates4)
+    rates5 = await getRates("USD", "EUR")
+    console.log(rates5)
+    rates6 = await getRates("EUR", "USD")
+    console.log(rates6)
+
+}
+
+start()
+
+let valorConvertido = 0
 
 function converter() {
 
@@ -58,16 +68,43 @@ function converter() {
     if (valuePara === 'R$') {
         Convertida.src = 'assets/brasil 2-1.png';
         currency2.innerHTML = 'Real'
-        currencyValue2.innerHTML = 'R$ ' + valor.value
+        currencyValue2.innerHTML = 'R$ ' + valorConvertido.toFixed(2)
+        if (valueDe === 'R$') {
+            valorConvertido = valor.value * 1
+        }
+        else if (valueDe === 'US$') {
+            valorConvertido = valor.value * rates1
+        }
+        else if (valueDe === 'E$') {
+            valorConvertido = valor.value * rates3
+        }
     }
     else if (valuePara === 'US$') {
         Convertida.src = 'assets/estados-unidos (1) 1.png';
         currency2.innerHTML = 'Dólar'
-        currencyValue2.innerHTML = 'US$ ' + valor.value
+        currencyValue2.innerHTML = 'US$ ' + valorConvertido.toFixed(2)
+        if (valueDe === 'R$') {
+            valorConvertido = valor.value * rates2
+        }
+        else if (valueDe === 'US$') {
+            valorConvertido = valor.value * 1
+        }
+        else if (valueDe === 'E$') {
+            valorConvertido = valor.value * rates6
+        }
     }
     else if (valuePara === 'E$') {
         Convertida.src = 'assets/Design sem nome 3.png';
         currency2.innerHTML = 'Euro'
-        currencyValue2.innerHTML = 'E$ ' + valor.value
+        currencyValue2.innerHTML = 'E$ ' + valorConvertido.toFixed(2)
+        if (valueDe === 'R$') {
+            valorConvertido = valor.value * rates4
+        }
+        else if (valueDe === 'US$') {
+            valorConvertido = valor.value * rates5
+        }
+        else if (valueDe === 'E$') {
+            valorConvertido = valor.value * 1
+        }
     }
 }
