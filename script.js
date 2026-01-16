@@ -50,17 +50,26 @@ function converter() {
     if (valueDe === 'R$') {
         moedaAConverter.src = 'assets/brasil 2-1.png';
         currency1.innerHTML = 'Real'
-        currencyValue1.innerHTML = 'R$ ' + valor.value
+        currencyValue1.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(valor.value)
     }
     else if (valueDe === 'US$') {
         moedaAConverter.src = 'assets/estados-unidos (1) 1.png';
         currency1.innerHTML = 'Dólar'
-        currencyValue1.innerHTML = 'US$ ' + valor.value
+        currencyValue1.innerHTML = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(valor.value)
     }
     else if (valueDe === 'E$') {
         moedaAConverter.src = 'assets/Design sem nome 3.png';
         currency1.innerHTML = 'Euro'
-        currencyValue1.innerHTML = 'E$ ' + valor.value
+        currencyValue1.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR'
+        }).format(valor.value)
     }
 
     const valuePara = para.value
@@ -77,7 +86,10 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * rates3
         }
-        currencyValue2.innerHTML = 'R$ ' + valorConvertido.toFixed(2)
+        currencyValue2.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(valorConvertido)
     }
     else if (valuePara === 'US$') {
         Convertida.src = 'assets/estados-unidos (1) 1.png';
@@ -91,7 +103,10 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * rates6
         }
-        currencyValue2.innerHTML = 'US$ ' + valorConvertido.toFixed(2)
+        currencyValue2.innerHTML = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(valorConvertido)
     }
     else if (valuePara === 'E$') {
         Convertida.src = 'assets/Design sem nome 3.png';
@@ -105,6 +120,9 @@ function converter() {
         else if (valueDe === 'E$') {
             valorConvertido = valor.value * 1
         }
-        currencyValue2.innerHTML = 'E$ ' + valorConvertido.toFixed(2)
+        currencyValue2.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR'
+        }).format(valorConvertido)
     }
 }
