@@ -4,7 +4,7 @@ const valueDe = de.value;
 const moedaAConverter = document.querySelector('.a-converter')
 const currency1 = document.querySelector('.currency1')
 const currencyValue1 = document.querySelector('.currency-value1')
-const valor = document.querySelector('.valor')
+const valor = document.querySelector('#valor')
 
 const para = document.getElementById('money2')
 const valuePara = para.value;
